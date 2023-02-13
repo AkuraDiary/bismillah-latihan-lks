@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_restaurantModelStoreContainer" CdmEntityContainer="db_restaurantEntities">
+    <EntitySetMapping Name="detailorders">
+      <EntityTypeMapping TypeName="db_restaurantModel.detailorder">
+        <MappingFragment StoreEntitySet="detailorder">
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="headerorders">
+      <EntityTypeMapping TypeName="db_restaurantModel.headerorder">
+        <MappingFragment StoreEntitySet="headerorder">
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+          <ScalarProperty Name="bank" ColumnName="bank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msemployees">
+      <EntityTypeMapping TypeName="db_restaurantModel.msemployee">
+        <MappingFragment StoreEntitySet="msemployee">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="handphone" ColumnName="handphone" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msmembers">
+      <EntityTypeMapping TypeName="db_restaurantModel.msmember">
+        <MappingFragment StoreEntitySet="msmember">
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="handphone" ColumnName="handphone" />
+          <ScalarProperty Name="join_date" ColumnName="join_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msmenus">
+      <EntityTypeMapping TypeName="db_restaurantModel.msmenu">
+        <MappingFragment StoreEntitySet="msmenu">
+          <ScalarProperty Name="img_name" ColumnName="img_name" />
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

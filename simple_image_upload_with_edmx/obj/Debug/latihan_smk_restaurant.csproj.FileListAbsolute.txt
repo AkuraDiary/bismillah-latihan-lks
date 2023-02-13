@@ -1,0 +1,10 @@
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\bin\Debug\latihan_smk_restaurant.exe.config
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\bin\Debug\latihan_smk_restaurant.exe
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\bin\Debug\latihan_smk_restaurant.pdb
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\obj\Debug\latihan_smk_restaurant.csproj.AssemblyReference.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\obj\Debug\latihan_smk_restaurant.Form1.resources
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\obj\Debug\latihan_smk_restaurant.Properties.Resources.resources
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\obj\Debug\latihan_smk_restaurant.csproj.GenerateResource.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\obj\Debug\latihan_smk_restaurant.csproj.CoreCompileInputs.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\obj\Debug\latihan_smk_restaurant.exe
+D:\##LKS FILE\#LKS PROJECT\bismillah\latihan_smk_restaurant\obj\Debug\latihan_smk_restaurant.pdb

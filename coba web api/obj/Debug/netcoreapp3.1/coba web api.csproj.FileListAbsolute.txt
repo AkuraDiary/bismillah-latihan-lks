@@ -1,0 +1,38 @@
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\appsettings.json
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.exe
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.deps.json
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.runtimeconfig.json
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.runtimeconfig.dev.json
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.dll
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.pdb
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.Views.dll
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\bin\Debug\netcoreapp3.1\coba web api.Views.pdb
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.csproj.AssemblyReference.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.GeneratedMSBuildEditorConfig.editorconfig
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.AssemblyInfoInputs.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.AssemblyInfo.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.csproj.CoreCompileInputs.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.MvcApplicationPartsAssemblyInfo.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.RazorAssemblyInfo.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.RazorAssemblyInfo.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\staticwebassets\coba web api.StaticWebAssets.Manifest.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\staticwebassets\coba web api.StaticWebAssets.xml
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\scopedcss\bundle\coba web api.styles.css
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.TagHelpers.input.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.TagHelpers.output.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.RazorCoreGenerate.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.RazorTargetAssemblyInfo.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.RazorTargetAssemblyInfo.cs
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.Views.pdb
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.dll
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.pdb
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.genruntimeconfig.cache
+D:\##LKS FILE\#LKS PROJECT\bismillah\coba web api\obj\Debug\netcoreapp3.1\coba web api.csproj.CopyComplete

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55D7C428-D3E2-4BB8-B70D-C8D8837EE266}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>latihangrandhotellagi</RootNamespace>
+    <AssemblyName>latihangrandhotellagi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ui\pages\AddHousekeepingSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\AddHousekeepingSchedule.Designer.cs">
+      <DependentUpon>AddHousekeepingSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\CleaningRoomFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\CleaningRoomFragment.Designer.cs">
+      <DependentUpon>CleaningRoomFragment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\CheckinFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\CheckinFragment.Designer.cs">
+      <DependentUpon>CheckinFragment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\CheckOutFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\CheckOutFragment.Designer.cs">
+      <DependentUpon>CheckOutFragment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\MasterItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\MasterItem.Designer.cs">
+      <DependentUpon>MasterItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\MasterRoomFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\MasterRoomFragment.Designer.cs">
+      <DependentUpon>MasterRoomFragment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\MasterRoomTypeFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\MasterRoomTypeFragment.Designer.cs">
+      <DependentUpon>MasterRoomTypeFragment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\RequestAdditionalItemFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\RequestAdditionalItemFragment.Designer.cs">
+      <DependentUpon>RequestAdditionalItemFragment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\ReservationFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\frontdesk\ReservationFragment.Designer.cs">
+      <DependentUpon>ReservationFragment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pages\MasterEmployeeFragment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\pages\MasterEmployeeFragment.Designer.cs">
+      <DependentUpon>MasterEmployeeFragment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ui\pages\AddHousekeepingSchedule.resx">
+      <DependentUpon>AddHousekeepingSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\CleaningRoomFragment.resx">
+      <DependentUpon>CleaningRoomFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\frontdesk\CheckinFragment.resx">
+      <DependentUpon>CheckinFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\frontdesk\CheckOutFragment.resx">
+      <DependentUpon>CheckOutFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\frontdesk\MasterItem.resx">
+      <DependentUpon>MasterItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\frontdesk\MasterRoomFragment.resx">
+      <DependentUpon>MasterRoomFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\frontdesk\MasterRoomTypeFragment.resx">
+      <DependentUpon>MasterRoomTypeFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\frontdesk\RequestAdditionalItemFragment.resx">
+      <DependentUpon>RequestAdditionalItemFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\frontdesk\ReservationFragment.resx">
+      <DependentUpon>ReservationFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\pages\MasterEmployeeFragment.resx">
+      <DependentUpon>MasterEmployeeFragment.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="ui\component\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5WQN5CMUUZ/vCVkOuyhtI6FOJnN5In1I/Vt5vnRonBCtrDNHH2SfIKt/urSS1KFIW2PK6eq150As0v32ojqUJg==",
+  "success": true,
+  "projectFilePath": "D:\\##LKS FILE\\#LKS PROJECT\\bismillah\\coba web api\\coba web api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SARPRA MOKLET\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_restaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="detailorder">
+          <Key>
+            <PropertyRef Name="detail_id" />
+          </Key>
+          <Property Name="detail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="menu_id" Type="int" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="headerorder">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="employee_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="member_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="payment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bank" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="order_status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="total_price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="msemployee">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="handphone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="position" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="msmember">
+          <Key>
+            <PropertyRef Name="member_id" />
+          </Key>
+          <Property Name="member_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="handphone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="join_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="msmenu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="photo" Type="image" Nullable="false" />
+          <Property Name="img_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_detailorder_headerorder">
+          <End Role="headerorder" Type="Self.headerorder" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="detailorder" Type="Self.detailorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="headerorder">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="detailorder">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detailorder_msmenu">
+          <End Role="msmenu" Type="Self.msmenu" Multiplicity="1" />
+          <End Role="detailorder" Type="Self.detailorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msmenu">
+              <PropertyRef Name="menu_id" />
+            </Principal>
+            <Dependent Role="detailorder">
+              <PropertyRef Name="menu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_headerorder_msemployee">
+          <End Role="msemployee" Type="Self.msemployee" Multiplicity="1" />
+          <End Role="headerorder" Type="Self.headerorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msemployee">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="headerorder">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_headerorder_msmember">
+          <End Role="msmember" Type="Self.msmember" Multiplicity="1" />
+          <End Role="headerorder" Type="Self.headerorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msmember">
+              <PropertyRef Name="member_id" />
+            </Principal>
+            <Dependent Role="headerorder">
+              <PropertyRef Name="member_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_restaurantModelStoreContainer">
+          <EntitySet Name="detailorder" EntityType="Self.detailorder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="headerorder" EntityType="Self.headerorder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msemployee" EntityType="Self.msemployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msmember" EntityType="Self.msmember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="msmenu" EntityType="Self.msmenu" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_detailorder_headerorder" Association="Self.FK_detailorder_headerorder">
+            <End Role="headerorder" EntitySet="headerorder" />
+            <End Role="detailorder" EntitySet="detailorder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detailorder_msmenu" Association="Self.FK_detailorder_msmenu">
+            <End Role="msmenu" EntitySet="msmenu" />
+            <End Role="detailorder" EntitySet="detailorder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_headerorder_msemployee" Association="Self.FK_headerorder_msemployee">
+            <End Role="msemployee" EntitySet="msemployee" />
+            <End Role="headerorder" EntitySet="headerorder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_headerorder_msmember" Association="Self.FK_headerorder_msmember">
+            <End Role="msmember" EntitySet="msmember" />
+            <End Role="headerorder" EntitySet="headerorder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_restaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="detailorder">
+          <Key>
+            <PropertyRef Name="detail_id" />
+          </Key>
+          <Property Name="detail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="menu_id" Type="Int32" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="headerorder" Relationship="Self.FK_detailorder_headerorder" FromRole="detailorder" ToRole="headerorder" />
+          <NavigationProperty Name="msmenu" Relationship="Self.FK_detailorder_msmenu" FromRole="detailorder" ToRole="msmenu" />
+        </EntityType>
+        <EntityType Name="headerorder">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employee_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="member_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="detailorders" Relationship="Self.FK_detailorder_headerorder" FromRole="headerorder" ToRole="detailorder" />
+          <NavigationProperty Name="msemployee" Relationship="Self.FK_headerorder_msemployee" FromRole="headerorder" ToRole="msemployee" />
+          <NavigationProperty Name="msmember" Relationship="Self.FK_headerorder_msmember" FromRole="headerorder" ToRole="msmember" />
+          <Property Name="order_status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="total_price" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="msemployee">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="handphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="headerorders" Relationship="Self.FK_headerorder_msemployee" FromRole="msemployee" ToRole="headerorder" />
+        </EntityType>
+        <EntityType Name="msmember">
+          <Key>
+            <PropertyRef Name="member_id" />
+          </Key>
+          <Property Name="member_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="handphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="join_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="headerorders" Relationship="Self.FK_headerorder_msmember" FromRole="msmember" ToRole="headerorder" />
+        </EntityType>
+        <EntityType Name="msmenu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="detailorders" Relationship="Self.FK_detailorder_msmenu" FromRole="msmenu" ToRole="detailorder" />
+          <Property Name="img_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_detailorder_headerorder">
+          <End Role="headerorder" Type="Self.headerorder" Multiplicity="1" />
+          <End Role="detailorder" Type="Self.detailorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="headerorder">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="detailorder">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detailorder_msmenu">
+          <End Role="msmenu" Type="Self.msmenu" Multiplicity="1" />
+          <End Role="detailorder" Type="Self.detailorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msmenu">
+              <PropertyRef Name="menu_id" />
+            </Principal>
+            <Dependent Role="detailorder">
+              <PropertyRef Name="menu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_headerorder_msemployee">
+          <End Role="msemployee" Type="Self.msemployee" Multiplicity="1" />
+          <End Role="headerorder" Type="Self.headerorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msemployee">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="headerorder">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_headerorder_msmember">
+          <End Role="msmember" Type="Self.msmember" Multiplicity="1" />
+          <End Role="headerorder" Type="Self.headerorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msmember">
+              <PropertyRef Name="member_id" />
+            </Principal>
+            <Dependent Role="headerorder">
+              <PropertyRef Name="member_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_restaurantEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="detailorders" EntityType="Self.detailorder" />
+          <EntitySet Name="headerorders" EntityType="Self.headerorder" />
+          <EntitySet Name="msemployees" EntityType="Self.msemployee" />
+          <EntitySet Name="msmembers" EntityType="Self.msmember" />
+          <EntitySet Name="msmenus" EntityType="Self.msmenu" />
+          <AssociationSet Name="FK_detailorder_headerorder" Association="Self.FK_detailorder_headerorder">
+            <End Role="headerorder" EntitySet="headerorders" />
+            <End Role="detailorder" EntitySet="detailorders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detailorder_msmenu" Association="Self.FK_detailorder_msmenu">
+            <End Role="msmenu" EntitySet="msmenus" />
+            <End Role="detailorder" EntitySet="detailorders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_headerorder_msemployee" Association="Self.FK_headerorder_msemployee">
+            <End Role="msemployee" EntitySet="msemployees" />
+            <End Role="headerorder" EntitySet="headerorders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_headerorder_msmember" Association="Self.FK_headerorder_msmember">
+            <End Role="msmember" EntitySet="msmembers" />
+            <End Role="headerorder" EntitySet="headerorders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_restaurantModelStoreContainer" CdmEntityContainer="db_restaurantEntities">
+          <EntitySetMapping Name="detailorders">
+            <EntityTypeMapping TypeName="db_restaurantModel.detailorder">
+              <MappingFragment StoreEntitySet="detailorder">
+                <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="headerorders">
+            <EntityTypeMapping TypeName="db_restaurantModel.headerorder">
+              <MappingFragment StoreEntitySet="headerorder">
+                <ScalarProperty Name="total_price" ColumnName="total_price" />
+                <ScalarProperty Name="order_status" ColumnName="order_status" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="member_id" ColumnName="member_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="payment" ColumnName="payment" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msemployees">
+            <EntityTypeMapping TypeName="db_restaurantModel.msemployee">
+              <MappingFragment StoreEntitySet="msemployee">
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="handphone" ColumnName="handphone" />
+                <ScalarProperty Name="position" ColumnName="position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msmembers">
+            <EntityTypeMapping TypeName="db_restaurantModel.msmember">
+              <MappingFragment StoreEntitySet="msmember">
+                <ScalarProperty Name="member_id" ColumnName="member_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="handphone" ColumnName="handphone" />
+                <ScalarProperty Name="join_date" ColumnName="join_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msmenus">
+            <EntityTypeMapping TypeName="db_restaurantModel.msmenu">
+              <MappingFragment StoreEntitySet="msmenu">
+                <ScalarProperty Name="img_name" ColumnName="img_name" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
